@@ -1,0 +1,17 @@
+{
+  "name": "webstacknl/hostfact-odr-dns-addon",
+  "description": "Addon to manage DNS zones for ODR in Hostfact",
+  "type": "project",
+  "require": {
+    "guzzlehttp/guzzle": "^6.3",
+    "symfony/var-dumper": "^4.2",
+    "ext-json": "*"
+  },
+  "authors": [
+    {
+      "name": "Robbert van Mourik",
+      "email": "robbert@webstack.nl"
+    }
+  ],
+  "minimum-stability": "stable"
+}

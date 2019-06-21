@@ -1,8 +1,8 @@
 <?php
 
 $version['name']            = 'Webstack - ODR DNS Platform';
-$version['version']         = '1.0';
-$version['date']            = '2019-05-01';
+$version['version']         = '1.1';
+$version['date']            = '2019-06-21';
 $version['wefact_version']  = '5.1.3';
 
 $version['dev_logo']		= '';

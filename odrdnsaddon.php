@@ -10,13 +10,14 @@ require_once 'vendor/autoload.php';
  *
  * Author:   Webstack B.V.
  * Copyright:   Webstack B.V.
- * Version:   1.0
+ * Version:   1.1
  *
  * CHANGE LOG:
  * -------------------------------------------------------------------------------------
  *  yyyy-mm-yy        Author                                            Initial version
  * -------------------------------------------------------------------------------------
  *  2019-04-29        Robbert van Mourik <robbert@webstack.nl>          1.0
+ *  2019-06-21        Marco Wansinck <marco@webstack.nl>                1.1
  *
  */
 class odrdnsaddon
@@ -183,6 +184,22 @@ class odrdnsaddon
 
                 $i++;
             }
+
+            usort($dns_zone['records'], function($zone1, $zone2) {
+                if ($zone1['type'] !== $zone2['type']) {
+                    return $zone1['type'] <=> $zone2['type'];
+                }
+
+                if ($zone1['name'] !== $zone2['name']) {
+                    return $zone1['name'] <=> $zone2['name'];
+                }
+
+                if ($zone1['priority'] !== $zone2['priority']) {
+                    return $zone1['priority'] <=> $zone2['priority'];
+                }
+
+                return $zone1['value'] <=> $zone2['value'];
+            });
 
             return $dns_zone;
         }
